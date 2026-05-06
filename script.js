@@ -210,6 +210,8 @@ const translationEntries = [
   ['software.focusAi', 'AI-supported language education', 'Éducation aux langues soutenue par l’IA', 'AI 支持的语言教育'],
   ['software.statusKicker', 'Development status', 'Statut de développement', '开发状态'],
   ['software.statusText', 'This project is currently in development. The page presents the concept and early direction rather than a public release.', 'Ce projet est actuellement en développement. Cette page présente le concept et l’orientation initiale plutôt qu’une version publique.', '该项目目前正在开发中。本页展示概念和早期方向，而不是公开发布版本。'],
+  ['software.appLinkText', 'Open the app preview at app.sifaks.com →', 'Ouvrir l’aperçu de l’application sur app.sifaks.com →', '打开 app.sifaks.com 上的应用预览 →'],
+  ['software.appLinkAria', 'Open EuuuhFrench app preview at app.sifaks.com', 'Ouvrir l’aperçu de l’application EuuuhFrench sur app.sifaks.com', '打开 app.sifaks.com 上的 EuuuhFrench 应用预览'],
   ['publications.title', 'Publications', 'Publications', '出版物'],
   ['publications.pill', 'My Research', 'Mes recherches', '我的研究'],
   ['publications.lead', 'A space for publications, academic writing, conference work, and research outputs in language policy, language education, and applied linguistics.', 'Un espace pour les publications, l’écriture académique, les communications et les productions de recherche en politique linguistique, éducation aux langues et linguistique appliquée.', '用于展示语言政策、语言教育和应用语言学领域的出版物、学术写作、会议工作和研究成果。'],
@@ -465,6 +467,286 @@ const createSiteBackground = () => {
   document.body.prepend(background);
 };
 
+const createSiteCursorTube = () => {
+  if (!document.body || document.querySelector('.site-cursor-aura')) return;
+
+  const pointerQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+  if (motionQuery.matches || !pointerQuery.matches) return;
+
+  const homePaths = new Set(['', '/', '/index.html']);
+  const isHomePage = homePaths.has(window.location.pathname) || window.location.pathname.endsWith('/index.html');
+  const canvas = isHomePage ? document.createElement('canvas') : null;
+  if (canvas) {
+    canvas.className = 'site-cursor-tube-canvas';
+    canvas.setAttribute('aria-hidden', 'true');
+  }
+
+  const aura = document.createElement('div');
+  aura.className = 'site-cursor-aura';
+  aura.setAttribute('aria-hidden', 'true');
+
+  document.body.prepend(aura);
+  if (canvas) document.body.prepend(canvas);
+
+  const moduleUrl = 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js';
+  const fallbackState = { destroy: null };
+  const auraState = {
+    targetX: window.innerWidth / 2,
+    targetY: window.innerHeight / 2,
+    currentX: window.innerWidth / 2,
+    currentY: window.innerHeight / 2,
+    raf: 0,
+    active: false
+  };
+  let tubeApp = null;
+  let destroyed = false;
+
+  const isHeroTubeArea = () => {
+    if (!isHomePage) return false;
+    const hero = document.querySelector('.home-hero, .hero');
+    const threshold = hero ? Math.min(hero.offsetHeight * 0.76, window.innerHeight * 0.9) : window.innerHeight * 0.72;
+    return window.scrollY < threshold;
+  };
+
+  const updateCursorLightingMode = () => {
+    if (destroyed) return;
+    const showTube = !!canvas && isHeroTubeArea();
+    document.body.classList.toggle('cursor-tube-visible', showTube);
+    document.body.classList.toggle('cursor-aura-visible', auraState.active && !showTube);
+  };
+
+  const moveAura = () => {
+    auraState.currentX += (auraState.targetX - auraState.currentX) * 0.28;
+    auraState.currentY += (auraState.targetY - auraState.currentY) * 0.28;
+    aura.style.transform = `translate3d(${auraState.currentX - aura.offsetWidth / 2}px, ${auraState.currentY - aura.offsetHeight / 2}px, 0)`;
+
+    if (Math.abs(auraState.targetX - auraState.currentX) > 0.2 || Math.abs(auraState.targetY - auraState.currentY) > 0.2) {
+      auraState.raf = requestAnimationFrame(moveAura);
+    } else {
+      auraState.raf = 0;
+    }
+  };
+
+  const handlePointerAura = (event) => {
+    if (event.pointerType && event.pointerType !== 'mouse') return;
+    auraState.targetX = event.clientX;
+    auraState.targetY = event.clientY;
+    auraState.active = true;
+    updateCursorLightingMode();
+    if (!auraState.raf && !document.hidden) auraState.raf = requestAnimationFrame(moveAura);
+  };
+
+  const handlePointerLeave = () => {
+    auraState.active = false;
+    document.body.classList.remove('cursor-aura-visible');
+  };
+
+  const startFallbackTube = () => {
+    if (!canvas) return null;
+    const context = canvas.getContext('2d', { alpha: true });
+    if (!context) return null;
+
+    const maxAge = 300;
+    const maxPoints = 12;
+    const maxTrailDistance = 150;
+    const minPointDistance = 9;
+    const points = [];
+    let animationFrame = 0;
+    let pixelRatio = 1;
+
+    const resizeCanvas = () => {
+      pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.floor(window.innerWidth * pixelRatio);
+      canvas.height = Math.floor(window.innerHeight * pixelRatio);
+      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    };
+
+    const prunePoints = (now) => {
+      while (points.length && now - points[0].time > maxAge) points.shift();
+      while (points.length > maxPoints) points.shift();
+
+      let distance = 0;
+      for (let index = points.length - 1; index > 0; index -= 1) {
+        distance += Math.hypot(points[index].x - points[index - 1].x, points[index].y - points[index - 1].y);
+        if (distance > maxTrailDistance) {
+          points.splice(0, index);
+          break;
+        }
+      }
+    };
+
+    const addPoint = (x, y, now) => {
+      const lastPoint = points[points.length - 1];
+      if (lastPoint && Math.hypot(x - lastPoint.x, y - lastPoint.y) < minPointDistance) {
+        lastPoint.x = x;
+        lastPoint.y = y;
+        lastPoint.time = now;
+        return;
+      }
+
+      points.push({ x, y, time: now });
+      prunePoints(now);
+    };
+
+    const drawLayer = (now, width, alpha, colorA, colorB) => {
+      if (points.length < 2) return;
+
+      context.lineCap = 'round';
+      context.lineJoin = 'round';
+
+      for (let index = 1; index < points.length; index += 1) {
+        const p0 = points[index - 1];
+        const p1 = points[index];
+        const progress = index / (points.length - 1);
+        const fade = Math.max(0, 1 - (now - p1.time) / maxAge);
+        const strength = Math.pow(Math.min(progress, fade), 1.3);
+        if (strength <= 0.025) continue;
+
+        const gradient = context.createLinearGradient(p0.x, p0.y, p1.x, p1.y);
+        gradient.addColorStop(0, colorA(alpha * strength * 0.72));
+        gradient.addColorStop(1, colorB(alpha * strength));
+        context.strokeStyle = gradient;
+        context.lineWidth = width * (0.32 + strength * 0.68);
+        context.beginPath();
+        context.moveTo(p0.x, p0.y);
+        context.lineTo(p1.x, p1.y);
+        context.stroke();
+      }
+    };
+
+    const render = (now) => {
+      context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      prunePoints(now);
+
+      if (points.length > 1) {
+        context.save();
+        context.globalCompositeOperation = 'lighter';
+        context.shadowBlur = 5;
+        context.shadowColor = 'rgba(125, 211, 252, 0.12)';
+        drawLayer(now, 13, 0.13, (a) => `rgba(76, 201, 255, ${a})`, (a) => `rgba(167, 139, 250, ${a})`);
+        context.shadowBlur = 0;
+        drawLayer(now, 5.2, 0.28, (a) => `rgba(125, 211, 252, ${a})`, (a) => `rgba(119, 141, 255, ${a})`);
+        drawLayer(now, 1.7, 0.62, (a) => `rgba(241, 250, 255, ${a})`, (a) => `rgba(181, 230, 255, ${a})`);
+        context.restore();
+      }
+
+      animationFrame = points.length ? requestAnimationFrame(render) : 0;
+    };
+
+    const requestRender = () => {
+      if (!animationFrame && !document.hidden) animationFrame = requestAnimationFrame(render);
+    };
+
+    const handlePointerMove = (event) => {
+      if (event.pointerType && event.pointerType !== 'mouse') return;
+      addPoint(event.clientX, event.clientY, performance.now());
+      requestRender();
+    };
+
+    const clearTrail = () => {
+      points.length = 0;
+      context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animationFrame);
+        animationFrame = 0;
+        clearTrail();
+      }
+    };
+
+    resizeCanvas();
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
+    window.addEventListener('resize', resizeCanvas);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      clearTrail();
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('resize', resizeCanvas);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  };
+
+  const startReferenceTube = async () => {
+    if (!canvas) return;
+    try {
+      const mod = await import(/* webpackIgnore: true */ moduleUrl);
+      if (destroyed || !canvas.isConnected) return;
+
+      const TubesCursorCtor = mod.default || mod;
+      tubeApp = TubesCursorCtor(canvas, {
+        tubes: {
+          colors: ['#7dd3fc', '#60a5fa', '#a78bfa'],
+          lights: {
+            intensity: 160,
+            colors: ['#e0f2fe', '#7dd3fc', '#8b5cf6', '#60a5fa']
+          }
+        }
+      });
+
+      canvas.dataset.cursorEngine = 'threejs-components';
+    } catch (error) {
+      if (destroyed || !canvas.isConnected) return;
+      canvas.dataset.cursorEngine = 'canvas-fallback';
+      fallbackState.destroy = startFallbackTube();
+    }
+  };
+
+  const destroyTube = () => {
+    destroyed = true;
+    fallbackState.destroy?.();
+    cancelAnimationFrame(auraState.raf);
+    window.removeEventListener('pointermove', handlePointerAura);
+    window.removeEventListener('mousemove', handlePointerAura);
+    window.removeEventListener('pointerleave', handlePointerLeave);
+    window.removeEventListener('scroll', updateCursorLightingMode);
+    window.removeEventListener('resize', updateCursorLightingMode);
+    document.removeEventListener('visibilitychange', handleVisibilityChange);
+    try {
+      tubeApp?.dispose?.();
+    } catch {
+      // The CDN cursor has different teardown support across versions.
+    }
+    document.body.classList.remove('cursor-tube-visible', 'cursor-aura-visible');
+    canvas?.remove();
+    aura.remove();
+  };
+
+  const handleCapabilityChange = () => {
+    if (motionQuery.matches || !pointerQuery.matches) destroyTube();
+  };
+
+  const handleVisibilityChange = () => {
+    if (document.hidden) {
+      auraState.active = false;
+      cancelAnimationFrame(auraState.raf);
+      auraState.raf = 0;
+      document.body.classList.remove('cursor-aura-visible');
+    }
+  };
+
+  if (motionQuery.addEventListener) {
+    motionQuery.addEventListener('change', handleCapabilityChange);
+    pointerQuery.addEventListener('change', handleCapabilityChange);
+  } else {
+    motionQuery.addListener(handleCapabilityChange);
+    pointerQuery.addListener(handleCapabilityChange);
+  }
+
+  window.addEventListener('pointermove', handlePointerAura, { passive: true });
+  window.addEventListener('mousemove', handlePointerAura, { passive: true });
+  window.addEventListener('pointerleave', handlePointerLeave);
+  window.addEventListener('scroll', updateCursorLightingMode, { passive: true });
+  window.addEventListener('resize', updateCursorLightingMode);
+  document.addEventListener('visibilitychange', handleVisibilityChange);
+
+  updateCursorLightingMode();
+  if (canvas) startReferenceTube();
+};
+
 const createLanguageClouds = () => {
   const languages = [
     '中文',
@@ -693,5 +975,6 @@ const createShaderBackground = () => {
 
 initTranslations();
 createSiteBackground();
+createSiteCursorTube();
 createLanguageClouds();
 createShaderBackground();

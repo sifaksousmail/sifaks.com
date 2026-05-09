@@ -33,6 +33,44 @@ if (moreMenu && moreBtn) {
 
 const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+const scrollToTarget = (top, behavior) => {
+  const scroller = document.scrollingElement || document.documentElement;
+  const targetTop = Math.max(0, top);
+  const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+  const setScrollTop = (nextTop) => {
+    scroller.scrollTop = nextTop;
+    document.documentElement.scrollTop = nextTop;
+    document.body.scrollTop = nextTop;
+    window.scrollTo(0, nextTop);
+  };
+
+  document.documentElement.style.scrollBehavior = 'auto';
+
+  if (behavior === 'auto') {
+    setScrollTop(targetTop);
+    document.documentElement.style.scrollBehavior = previousScrollBehavior;
+    return;
+  }
+
+  const startTop = window.scrollY || scroller.scrollTop || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  const distance = targetTop - startTop;
+  const duration = 520;
+  const startTime = performance.now();
+  const easeOutCubic = (progress) => 1 - Math.pow(1 - progress, 3);
+
+  const step = (now) => {
+    const progress = Math.min(1, (now - startTime) / duration);
+    setScrollTop(startTop + distance * easeOutCubic(progress));
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      document.documentElement.style.scrollBehavior = previousScrollBehavior;
+    }
+  };
+
+  requestAnimationFrame(step);
+};
+
 const scrollCues = document.querySelectorAll('.hero-scroll-cue,.continue-scroll-cue');
 scrollCues.forEach((scrollCue) => {
   scrollCue.addEventListener('click', (event) => {
@@ -43,15 +81,7 @@ scrollCues.forEach((scrollCue) => {
     const scrollMargin = Number.parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
     const targetTop = target.getBoundingClientRect().top + window.scrollY - scrollMargin;
     const behavior = motionQuery.matches ? 'auto' : 'smooth';
-    const scroller = document.scrollingElement || document.documentElement;
-    if (scroller && typeof scroller.scrollTo === 'function') {
-      scroller.scrollTo({
-        top: Math.max(0, targetTop),
-        behavior
-      });
-    } else {
-      window.scrollTo(0, Math.max(0, targetTop));
-    }
+    scrollToTarget(targetTop, behavior);
     history.pushState(null, '', targetId);
   });
 });
@@ -82,7 +112,7 @@ const translationEntries = [
   ['home.name', 'Sifaks Ousmail', 'Sifaks Ousmail', 'Sifaks Ousmail'],
   ['home.official', 'Official Website', 'Site officiel', '官方网站'],
   ['home.profileAlt', 'Portrait of Sifaks Ousmail', 'Portrait de Sifaks Ousmail', 'Sifaks Ousmail 肖像'],
-  ['home.lead', 'Researcher in SLA and AI-assisted language education.', 'Chercheur en acquisition des langues secondes et éducation aux langues assistée par IA.', '第二语言习得与 AI 辅助语言教育研究者。'],
+  ['home.lead', 'French researcher in SLA and AI-assisted language education.', 'Chercheur français en acquisition des langues secondes et éducation aux langues assistée par IA.', '法国第二语言习得与 AI 辅助语言教育研究者。'],
   ['home.note', 'This site is a growing space for language and linguistics lovers, connecting research, multilingual education, and practical pathways for Chinese, English, and French language learning.', 'Ce site est un espace en développement pour les passionnés de langues et de linguistique, reliant recherche, éducation multilingue et parcours pratiques pour l’apprentissage du chinois, de l’anglais et du français.', '本站是一个面向语言与语言学爱好者的成长空间，连接研究、多语教育以及中文、英语和法语学习的实践路径。'],
   ['home.viewBackground', 'View background', 'Voir le parcours', '查看背景'],
   ['home.letsGo', 'Let’s go', 'C’est parti', '开始'],
@@ -111,20 +141,18 @@ const translationEntries = [
   ['home.focusChinese', 'Chinese Language Learning', 'Apprentissage du chinois', '中文学习'],
   ['home.softwareKicker', 'Software preview', 'Aperçu logiciel', '软件预览'],
   ['home.softwareTitle', 'AI Language Software — Dev Preview', 'Logiciel linguistique IA — aperçu dev', 'AI 语言软件 — 开发预览'],
-  ['home.softwareCopy', 'Experimental software by Sifaks Ousmail for AI-assisted pronunciation feedback, currently focused on Chinese learners of French.', 'Logiciel expérimental de Sifaks Ousmail pour le feedback de prononciation assisté par l’IA, actuellement centré sur les apprenants chinois du français.', 'Sifaks Ousmail 的实验性软件，用于 AI 辅助发音反馈，目前聚焦学习法语的中文母语者。'],
+  ['home.softwareCopy', 'Experimental software by Sifaks Ousmail for AI-assisted pronunciation feedback and language learning.', 'Logiciel expérimental de Sifaks Ousmail pour le feedback de prononciation assisté par l’IA et l’apprentissage des langues.', 'Sifaks Ousmail 的实验性软件，用于 AI 辅助发音反馈和语言学习。'],
   ['home.softwareLink', 'Open software preview →', 'Ouvrir l’aperçu logiciel →', '打开软件预览 →'],
   ['home.academicProfiles', 'External Academic Profiles', 'Profils académiques externes', '外部学术主页'],
-  ['home.githubKicker', 'Code profile', 'Profil code', '代码主页'],
   ['home.githubTitle', 'GitHub', 'GitHub', 'GitHub'],
-  ['home.githubText', 'Sifaks Ousmail’s GitHub profile for projects, code, and ongoing work in language technology, software, digital development, and earlier gaming-related projects.', 'Le profil GitHub de Sifaks Ousmail rassemble des projets, du code et des travaux en cours autour des technologies du langage, du logiciel, du développement numérique et d’anciens projets liés au jeu vidéo.', 'Sifaks Ousmail 的 GitHub 主页展示语言技术、软件、数字开发相关的项目与代码，也包括早期与游戏相关的项目。'],
+  ['home.githubText', 'Sifaks Ousmail’s GitHub profile for software projects, gaming projects, and other code experiments.', 'Le profil GitHub de Sifaks Ousmail rassemble des projets logiciels, des projets liés au jeu vidéo et d’autres expérimentations de code.', 'Sifaks Ousmail 的 GitHub 主页展示软件项目、游戏相关项目和其他代码实验。'],
   ['home.githubLink', 'Visit GitHub profile →', 'Visiter le profil GitHub →', '访问 GitHub 主页 →'],
   ['home.githubAria', 'Visit Sifaks Ousmail GitHub profile', 'Visiter le profil GitHub de Sifaks Ousmail', '访问 Sifaks Ousmail 的 GitHub 主页'],
   ['footer.githubAria', 'Visit Sifaks Ousmail GitHub profile', 'Visiter le profil GitHub de Sifaks Ousmail', '访问 Sifaks Ousmail 的 GitHub 主页'],
-  ['background.title', 'Background', 'Parcours', '背景'],
+  ['background.title', 'About', 'À propos', '关于我'],
   ['background.pill', 'Academic Path', 'Parcours académique', '学术路径'],
   ['background.subtitle', 'An academic journey across France, the United Kingdom, and China.', 'Un parcours académique entre la France, le Royaume-Uni et la Chine.', '横跨法国、英国和中国的学术旅程。'],
-  ['background.heading', 'Academic Background', 'Parcours académique', '学术背景'],
-  ['background.note', 'Research interests include second language acquisition, AI-assisted language learning, and computational linguistics.', 'Mes intérêts de recherche portent sur l’acquisition des langues secondes, l’apprentissage des langues assisté par l’IA et la linguistique computationnelle.', '研究兴趣包括第二语言习得、人工智能辅助语言学习和计算语言学。'],
+  ['background.heading', 'About', 'À propos', '关于我'],
   ['background.phd', 'PhD', 'Doctorat', '博士'],
   ['background.masters', 'Master’s', 'Master', '硕士'],
   ['background.bachelors', 'Bachelor’s', 'Licence', '本科'],
@@ -252,7 +280,7 @@ const translationEntries = [
   ['blog.lead', 'A space for reflections on languages, linguistics, learning, culture, education, and the small ideas that grow through reading, teaching, traveling, and research.', 'Un espace de réflexion sur les langues, la linguistique, l’apprentissage, la culture, l’éducation et les petites idées qui naissent de la lecture, de l’enseignement, du voyage et de la recherche.', '一个关于语言、语言学、学习、文化、教育以及在阅读、教学、旅行和研究中逐渐形成的小想法的反思空间。'],
   ['blog.planned', 'Planned Notes', 'Notes prévues', '计划笔记'],
   ['blog.notes', 'Language notes', 'Notes linguistiques', '语言笔记'],
-  ['blog.note', 'A future reflection space for language learning, research, and academic ideas.', 'Un futur espace de réflexion sur l’apprentissage des langues, la recherche et les idées académiques.', '未来用于语言学习、研究和学术想法的反思空间。'],
+  ['blog.note', 'A future reflection space for language learning discussions and research ideas.', 'Un futur espace de réflexion pour les discussions sur l’apprentissage des langues et les idées de recherche.', '未来用于语言学习讨论和研究想法的反思空间。'],
   ['blog.gender', 'Why French Gender Is Difficult for Chinese Learners', 'Pourquoi le genre français est difficile pour les apprenants chinois', '为什么法语性别对中文学习者很难'],
   ['blog.genderDesc', 'A planned reflection on grammar, cross-linguistic differences, and the learning challenges behind French gender acquisition.', 'Une réflexion prévue sur la grammaire, les différences interlinguistiques et les défis d’apprentissage liés à l’acquisition du genre en français.', '一篇计划中的反思，讨论语法、跨语言差异以及法语性别习得背后的学习挑战。'],
   ['blog.aiPronunciation', 'AI and Pronunciation Learning', 'IA et apprentissage de la prononciation', '人工智能与发音学习'],

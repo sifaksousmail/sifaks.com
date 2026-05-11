@@ -23,7 +23,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="styles.css?v=20260510-copy-scroll">
+  <link rel="stylesheet" href="styles.css?v=20260511-dev-notes-polish">
 </head>
 <body>
   <div class="page">
@@ -95,7 +95,7 @@
             </figure>
 
             <h2 data-i18n="blogPost.changedTitle">What changed in v1.0?</h2>
-            <p data-i18n="blogPost.flow">The main focus was on making the practice flow more clearly and easily to follow. Learners now move through a simple sequence for each word or sentence: listen, record, receive feedback, retry or skip, then continue to the next item.</p>
+            <p data-i18n="blogPost.flow">The main focus was on making the practice flow more clearly and easily to follow. Learners now move through a simple sequence for each practice item: listen, record, receive feedback, retry or skip, then continue to the next item.</p>
 
             <p data-i18n="blogPost.mouthShape">Version 1.0 also includes local mouth-shape video guidance for five French sounds: /y/, /ø/, /œ/, /ʁ/, and /ɛ̃/. These sounds are especially relevant for Chinese-speaking learners of French because they involve lip rounding, vowel placement, nasal resonance, and uvular articulation. Video guidance is only available in Chinese for now.</p>
 
@@ -105,12 +105,66 @@
 
             <p data-i18n="blogPost.combines">The app now combines native French audio examples, learner recording replay, mouth-shape guidance, correction prompts, and API-backed pronunciation assessment. Feedback wording has also been refined so that unclear recordings receive useful guidance rather than misleading scores.</p>
 
+            <p data-i18n="blogPost.supportPages">Version 1.0 also includes a basic lesson chooser, completion flow, progress page, and feedback page. If real pronunciation scoring is not available, the app can use a preview mode, so the learning flow remains usable while clearly avoiding false assessment claims.</p>
+
             <p data-i18n="blogPost.assessment">The assessment layer has been improved in terms of target detection and feedback reliability. This remains AI-assisted pronunciation feedback, not a claim of a proprietary AI model, and not a replacement for teaching.</p>
 
             <h2 data-i18n="blogPost.prototypeTitle">Prototype status</h2>
             <p data-i18n="blogPost.prototype">EuuuhFrench AI v1.0 is the first working MVP. It is still an early version, but the core learning flow is now usable: native audio, recording, replay, pronunciation feedback, retry support, and video guidance for difficult sounds.</p>
 
             <p data-i18n-html="blogPost.privacy">Because this is the first public MVP release, basic <a href="https://app.sifaks.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="https://app.sifaks.com/terms" target="_blank" rel="noopener noreferrer">Terms of Use</a> pages have also been added. They explain how pronunciation audio may be processed by third-party APIs for feedback, and clarify that EuuuhFrench AI is an experimental learning tool.</p>
+
+            <section class="post-dev-notes" aria-labelledby="dev-notes-toggle-label">
+              <div class="post-dev-notes-toggle-wrap">
+                <button class="dev-notes-toggle" type="button" aria-expanded="false" aria-controls="developer-notes-panel">
+                  <span id="dev-notes-toggle-label" data-dev-notes-label data-i18n="blogPost.devNotesToggleClosed">View developer notes</span>
+                  <span class="scroll-arrow" aria-hidden="true">↓</span>
+                </button>
+              </div>
+
+              <div class="post-dev-notes-panel" id="developer-notes-panel" hidden>
+                <h2 data-i18n="blogPost.devNotesTitle">Developer notes</h2>
+                <p data-i18n="blogPost.devNotesFlow">v1.0 was built around a Next.js App Router practice flow with lesson selection, native French audio playback, browser MediaRecorder capture, learner replay, pronunciation assessment routing, normalized feedback display, local progress history, and multilingual EN/FR/中文 UI copy.</p>
+
+                <div class="dev-notes-group">
+                  <h3 data-i18n="blogPost.devNotesRoutesTitle">Routes checked:</h3>
+                  <ul class="dev-notes-list dev-notes-routes">
+                    <li><code>/</code></li>
+                    <li><code>/practice</code></li>
+                    <li><code>/feedback</code></li>
+                    <li><code>/progress</code></li>
+                    <li><code>/privacy</code></li>
+                    <li><code>/terms</code></li>
+                    <li><code>/api/audio/example</code></li>
+                    <li><code>/api/pronunciation/assess</code></li>
+                  </ul>
+                </div>
+
+                <div class="dev-notes-group">
+                  <h3 data-i18n="blogPost.devNotesImplementationTitle">Main implementation areas:</h3>
+                  <ul class="dev-notes-list">
+                    <li data-i18n="blogPost.devNotesAreaPractice">practice flow</li>
+                    <li data-i18n="blogPost.devNotesAreaRecording">recording and replay</li>
+                    <li data-i18n="blogPost.devNotesAreaAudio">audio example handling</li>
+                    <li data-i18n="blogPost.devNotesAreaFeedback">pronunciation feedback display</li>
+                    <li data-i18n="blogPost.devNotesAreaAssessment">Speechace-ready API assessment</li>
+                    <li data-i18n="blogPost.devNotesAreaPrivacy">privacy and terms pages</li>
+                    <li data-i18n="blogPost.devNotesAreaMobile">mobile layout polish</li>
+                    <li data-i18n="blogPost.devNotesAreaTranslations">translation strings</li>
+                  </ul>
+                </div>
+
+                <div class="dev-notes-group">
+                  <h3 data-i18n="blogPost.devNotesQualityTitle">Quality checks passed:</h3>
+                  <ul class="dev-notes-list dev-notes-commands">
+                    <li><code>npm run lint</code></li>
+                    <li><code>npm test</code></li>
+                    <li><code>npm run build</code></li>
+                    <li><code>git diff --check</code></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
 
             <p data-i18n="blogPost.final">As of now, this project serves as a bridge between applied linguistics research and practical language education design: a focused pronunciation software for Chinese-speaking learners of French. Built around concrete French pronunciation learning problems.</p>
 
@@ -130,6 +184,6 @@
     </footer>
   </div>
 
-  <script src="script.js?v=20260510-copy-scroll"></script>
+  <script src="script.js?v=20260511-dev-notes-polish"></script>
 </body>
 </html>

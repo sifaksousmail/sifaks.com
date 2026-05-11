@@ -300,14 +300,30 @@ const translationEntries = [
   ['blogPost.live', 'Version 1.0 is now live at <a href="https://app.sifaks.com" target="_blank" rel="noopener noreferrer">app.sifaks.com</a> as a focused MVP. Learners can listen to native French audio, record their own pronunciation, replay their attempt, receive AI-assisted feedback, read correction guidance, and try again. The interface is available in English, French, and Simplified Chinese, with desktop and mobile layouts checked.', 'La version 1.0 est maintenant en ligne sur <a href="https://app.sifaks.com" target="_blank" rel="noopener noreferrer">app.sifaks.com</a> comme MVP ciblé. Les apprenants peuvent écouter un audio français natif, enregistrer leur prononciation, réécouter leur essai, recevoir un feedback assisté par l’IA, lire des conseils de correction et recommencer. L’interface est disponible en anglais, français et chinois simplifié, avec des mises en page vérifiées sur ordinateur et mobile.', '1.0 版本现已在 <a href="https://app.sifaks.com" target="_blank" rel="noopener noreferrer">app.sifaks.com</a> 上线，作为一个聚焦发音练习的 MVP。学习者可以听法语母语音频、录制自己的发音、回放尝试、获得 AI 辅助反馈、阅读纠正建议并再次练习。界面支持英语、法语和简体中文，并已检查桌面端和移动端布局。'],
   ['blogPost.homeAlt', 'EuuuhFrench AI landing interface for Chinese-speaking learners of French.', 'Interface d’accueil d’EuuuhFrench AI pour les apprenants sinophones du français.', '面向中文母语法语学习者的 EuuuhFrench AI 首页界面。'],
   ['blogPost.changedTitle', 'What changed in v1.0?', 'Qu’est-ce qui change dans la v1.0 ?', 'v1.0 有哪些变化？'],
-  ['blogPost.flow', 'The main focus was on making the practice flow more clearly and easily to follow. Learners now move through a simple sequence for each word or sentence: listen, record, receive feedback, retry or skip, then continue to the next item.', 'Le travail principal a porté sur un parcours d’entraînement plus clair et plus facile à suivre. Pour chaque mot ou phrase, les apprenants suivent maintenant une séquence simple : écouter, enregistrer, recevoir un feedback, réessayer ou passer, puis continuer.', '这次更新的重点是让练习流程更清晰、更容易跟随。现在，每个单词或句子的练习顺序更简单：听音频、录音、接收反馈、重试或跳过，然后继续下一项。'],
+  ['blogPost.flow', 'The main focus was on making the practice flow more clearly and easily to follow. Learners now move through a simple sequence for each practice item: listen, record, receive feedback, retry or skip, then continue to the next item.', 'Le travail principal a porté sur un parcours d’entraînement plus clair et plus facile à suivre. Pour chaque élément de pratique, les apprenants suivent maintenant une séquence simple : écouter, enregistrer, recevoir un feedback, réessayer ou passer, puis continuer.', '这次更新的重点是让练习流程更清晰、更容易跟随。现在，每个练习项目的顺序更简单：听音频、录音、接收反馈、重试或跳过，然后继续下一项。'],
   ['blogPost.mouthShape', 'Version 1.0 also includes local mouth-shape video guidance for five French sounds: /y/, /ø/, /œ/, /ʁ/, and /ɛ̃/. These sounds are especially relevant for Chinese-speaking learners of French because they involve lip rounding, vowel placement, nasal resonance, and uvular articulation. Video guidance is only available in Chinese for now.', 'La version 1.0 inclut aussi une aide vidéo locale sur la forme de la bouche pour cinq sons français : /y/, /ø/, /œ/, /ʁ/ et /ɛ̃/. Ces sons sont particulièrement importants pour les apprenants sinophones du français, car ils impliquent l’arrondissement des lèvres, le placement vocalique, la résonance nasale et l’articulation uvulaire. Pour l’instant, l’aide vidéo est disponible uniquement en chinois.', '1.0 版本还加入了五个法语音素的本地口型视频指导：/y/、/ø/、/œ/、/ʁ/ 和 /ɛ̃/。这些音对中文母语法语学习者尤其重要，因为它们涉及圆唇、元音位置、鼻化共鸣和小舌音发音。目前视频指导仅提供中文。'],
   ['blogPost.mouthAlt', 'EuuuhFrench AI mouth-shape video guidance for French pronunciation practice.', 'Guidage vidéo de la forme de la bouche dans EuuuhFrench AI pour l’entraînement à la prononciation française.', 'EuuuhFrench AI 法语发音练习中的口型视频指导。'],
   ['blogPost.combines', 'The app now combines native French audio examples, learner recording replay, mouth-shape guidance, correction prompts, and API-backed pronunciation assessment. Feedback wording has also been refined so that unclear recordings receive useful guidance rather than misleading scores.', 'L’application combine maintenant des exemples audio en français natif, la réécoute de l’enregistrement de l’apprenant, des indications de forme de bouche, des consignes de correction et une évaluation de la prononciation soutenue par API. Le texte du feedback a aussi été ajusté afin que les enregistrements peu clairs reçoivent des conseils utiles plutôt que des scores trompeurs.', '现在，应用结合了法语母语音频示例、学习者录音回放、口型指导、纠正提示和 API 支持的发音评估。反馈文字也经过调整，让不清晰的录音获得更有用的建议，而不是产生误导性的分数。'],
+  ['blogPost.supportPages', 'Version 1.0 also includes a basic lesson chooser, completion flow, progress page, and feedback page. If real pronunciation scoring is not available, the app can use a preview mode, so the learning flow remains usable while clearly avoiding false assessment claims.', 'La version 1.0 comprend aussi un sélecteur de leçons, un parcours de fin de leçon, une page de progression et une page de feedback. Si l’évaluation réelle de la prononciation n’est pas disponible, l’application peut utiliser un mode de prévisualisation, afin que le parcours d’apprentissage reste utilisable sans présenter de fausses affirmations d’évaluation.', '1.0 版本还包括基础课程选择、课程完成流程、进度页面和反馈页面。如果真实的发音评分暂时不可用，应用可以使用预览模式，让学习流程仍然可以体验，同时避免把预览反馈误认为正式评估。'],
   ['blogPost.assessment', 'The assessment layer has been improved in terms of target detection and feedback reliability. This remains AI-assisted pronunciation feedback, not a claim of a proprietary AI model, and not a replacement for teaching.', 'La couche d’évaluation a été améliorée pour la détection des cibles et la fiabilité du feedback. Il s’agit toujours d’un feedback de prononciation assisté par l’IA, sans revendication de modèle propriétaire, et cela ne remplace pas l’enseignement.', '评估层在目标检测和反馈可靠性方面有所改进。这仍然是 AI 辅助发音反馈，并不代表自有专有 AI 模型，也不能替代教学。'],
   ['blogPost.prototypeTitle', 'Prototype status', 'Statut du prototype', '原型状态'],
   ['blogPost.prototype', 'EuuuhFrench AI v1.0 is the first working MVP. It is still an early version, but the core learning flow is now usable: native audio, recording, replay, pronunciation feedback, retry support, and video guidance for difficult sounds.', 'EuuuhFrench AI v1.0 est le premier MVP fonctionnel. Il s’agit encore d’une version précoce, mais le parcours principal est maintenant utilisable : audio natif, enregistrement, réécoute, feedback de prononciation, aide à la reprise et guidage vidéo pour les sons difficiles.', 'EuuuhFrench AI v1.0 是第一个可用的 MVP。它仍然是早期版本，但核心学习流程已经可以使用：母语音频、录音、回放、发音反馈、重试支持，以及针对难点音的口型视频指导。'],
   ['blogPost.privacy', 'Because this is the first public MVP release, basic <a href="https://app.sifaks.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="https://app.sifaks.com/terms" target="_blank" rel="noopener noreferrer">Terms of Use</a> pages have also been added. They explain how pronunciation audio may be processed by third-party APIs for feedback, and clarify that EuuuhFrench AI is an experimental learning tool.', 'Comme il s’agit de la première version MVP publique, des pages simples de <a href="https://app.sifaks.com/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité</a> et de <a href="https://app.sifaks.com/terms" target="_blank" rel="noopener noreferrer">conditions d’utilisation</a> ont aussi été ajoutées. Elles expliquent comment l’audio de prononciation peut être traité par des API tierces pour produire un feedback, et précisent qu’EuuuhFrench AI est un outil d’apprentissage expérimental.', '因为这是第一个公开 MVP 版本，项目也加入了基本的<a href="https://app.sifaks.com/privacy" target="_blank" rel="noopener noreferrer">隐私政策</a>和<a href="https://app.sifaks.com/terms" target="_blank" rel="noopener noreferrer">使用条款</a>页面。它们说明发音音频可能会通过第三方 API 处理以生成反馈，并明确 EuuuhFrench AI 是一个实验性学习工具。'],
+  ['blogPost.devNotesToggleClosed', 'View developer notes', 'Voir les notes développeur', '查看开发说明'],
+  ['blogPost.devNotesToggleOpen', 'Hide developer notes', 'Masquer les notes développeur', '隐藏开发说明'],
+  ['blogPost.devNotesTitle', 'Developer notes', 'Notes développeur', '开发说明'],
+  ['blogPost.devNotesFlow', 'v1.0 was built around a Next.js App Router practice flow with lesson selection, native French audio playback, browser MediaRecorder capture, learner replay, pronunciation assessment routing, normalized feedback display, local progress history, and multilingual EN/FR/中文 UI copy.', 'La v1.0 a été construite autour d’un parcours de pratique Next.js App Router avec sélection de leçons, lecture d’audio natif français, capture MediaRecorder dans le navigateur, réécoute par l’apprenant, acheminement de l’évaluation de prononciation, affichage normalisé du feedback, historique local de progression et textes d’interface multilingues EN/FR/中文.', 'v1.0 基于 Next.js App Router 练习流程构建，包括课程选择、法语原声音频播放、浏览器 MediaRecorder 录音、学习者录音回放、发音评估路由、标准化反馈显示、本地进度记录以及多语言 EN/FR/中文 UI 文案。'],
+  ['blogPost.devNotesRoutesTitle', 'Routes checked:', 'Routes vérifiées :', '已检查的路由：'],
+  ['blogPost.devNotesImplementationTitle', 'Main implementation areas:', 'Principales zones d’implémentation :', '主要实现部分：'],
+  ['blogPost.devNotesQualityTitle', 'Quality checks passed:', 'Vérifications qualité validées :', '已通过的质量检查：'],
+  ['blogPost.devNotesAreaPractice', 'practice flow', 'parcours de pratique', '练习流程'],
+  ['blogPost.devNotesAreaRecording', 'recording and replay', 'enregistrement et réécoute', '录音与回放'],
+  ['blogPost.devNotesAreaAudio', 'audio example handling', 'gestion des exemples audio', '音频示例处理'],
+  ['blogPost.devNotesAreaFeedback', 'pronunciation feedback display', 'affichage du feedback de prononciation', '发音反馈显示'],
+  ['blogPost.devNotesAreaAssessment', 'Speechace-ready API assessment', 'évaluation API compatible avec Speechace', 'Speechace-ready API 评估'],
+  ['blogPost.devNotesAreaPrivacy', 'privacy and terms pages', 'pages de confidentialité et de conditions d’utilisation', '隐私政策与使用条款页面'],
+  ['blogPost.devNotesAreaMobile', 'mobile layout polish', 'ajustements de la mise en page mobile', '移动端布局优化'],
+  ['blogPost.devNotesAreaTranslations', 'translation strings', 'chaînes de traduction', '翻译字符串'],
   ['blogPost.final', 'As of now, this project serves as a bridge between applied linguistics research and practical language education design: a focused pronunciation software for Chinese-speaking learners of French. Built around concrete French pronunciation learning problems.', 'Pour l’instant, ce projet fait le lien entre la recherche en linguistique appliquée et la conception concrète d’outils pour l’éducation aux langues : un logiciel de prononciation ciblé pour les apprenants sinophones du français, construit autour de problèmes réels de prononciation française.', '目前，这个项目连接应用语言学研究和实际语言教育设计：它是一个面向中文母语法语学习者的发音软件，围绕具体的法语发音学习问题构建。'],
   ['blogPost.softwareButton', 'View SIFAKS Software', 'Voir SIFAKS Software', '查看 SIFAKS Software'],
   ['blogPost.appButton', 'Open app preview', 'Ouvrir l’aperçu de l’app', '打开应用预览'],
@@ -467,6 +483,27 @@ const registerTranslatableElements = () => {
   });
 };
 
+const getCurrentLanguage = () => {
+  const storedLanguage = localStorage.getItem('preferredLanguage');
+  if (translations[storedLanguage]) return storedLanguage;
+  const pageLanguage = document.documentElement.lang === 'zh-CN' ? 'zh' : document.documentElement.lang;
+  return translations[pageLanguage] ? pageLanguage : 'en';
+};
+
+const updateDevNotesToggleLabel = (button, isOpen, language = getCurrentLanguage()) => {
+  const label = button.querySelector('[data-dev-notes-label]');
+  const arrow = button.querySelector('.scroll-arrow');
+  const key = isOpen ? 'blogPost.devNotesToggleOpen' : 'blogPost.devNotesToggleClosed';
+  const value = translations[language][key] || translations.en[key];
+
+  if (label && value) {
+    label.dataset.i18n = key;
+    setElementText(label, value);
+  }
+
+  if (arrow) arrow.textContent = isOpen ? '↑' : '↓';
+};
+
 const applyLanguage = (language) => {
   const selectedLanguage = translations[language] ? language : 'en';
   document.documentElement.lang = selectedLanguage === 'zh' ? 'zh-CN' : selectedLanguage;
@@ -499,6 +536,10 @@ const applyLanguage = (language) => {
   });
 
   localStorage.setItem('preferredLanguage', selectedLanguage);
+
+  document.querySelectorAll('.dev-notes-toggle').forEach((button) => {
+    updateDevNotesToggleLabel(button, button.getAttribute('aria-expanded') === 'true', selectedLanguage);
+  });
 };
 
 const createLanguageSwitcher = () => {
@@ -530,6 +571,24 @@ const initTranslations = () => {
   registerTranslatableElements();
   createLanguageSwitcher();
   applyLanguage(localStorage.getItem('preferredLanguage') || 'en');
+};
+
+const initDevNotesToggle = () => {
+  document.querySelectorAll('.post-dev-notes').forEach((section) => {
+    const button = section.querySelector('.dev-notes-toggle');
+    const panel = section.querySelector('.post-dev-notes-panel');
+    if (!button || !panel) return;
+
+    const setOpen = (isOpen) => {
+      panel.hidden = !isOpen;
+      section.classList.toggle('is-open', isOpen);
+      button.setAttribute('aria-expanded', String(isOpen));
+      updateDevNotesToggleLabel(button, isOpen);
+    };
+
+    setOpen(false);
+    button.addEventListener('click', () => setOpen(panel.hidden));
+  });
 };
 
 const createSiteBackground = () => {
@@ -1055,6 +1114,7 @@ const createShaderBackground = () => {
 };
 
 initTranslations();
+initDevNotesToggle();
 createSiteBackground();
 createSiteCursorTube();
 createLanguageClouds();

@@ -42,8 +42,8 @@ body::after{
     radial-gradient(ellipse 74% 42% at 50% 112%,rgba(74,91,184,0.13),transparent 72%),
     radial-gradient(ellipse 96% 18% at 48% 64%,rgba(125,211,252,0.035),rgba(167,139,250,0.02) 45%,transparent 78%),
     linear-gradient(180deg,rgba(8,11,18,0.035) 0%,transparent 14%,transparent 88%,rgba(8,11,18,0.1) 100%),
-    linear-gradient(90deg,rgba(255,255,255,0.006) 1px,transparent 1px),
-    linear-gradient(rgba(255,255,255,0.005) 1px,transparent 1px);
+    linear-gradient(90deg,rgba(255,255,255,0.0035) 1px,transparent 1px),
+    linear-gradient(rgba(255,255,255,0.003) 1px,transparent 1px);
   background-size:auto,auto,auto,auto,112px 112px,112px 112px;
   opacity:0.92;
 }
@@ -302,6 +302,9 @@ body.cursor-tube-visible .site-cursor-aura{opacity:0}
   overflow:visible;border-radius:0;
   min-height:min(760px,calc(100vh - 88px));
   justify-content:center;padding:44px 0 64px;
+}
+@media(min-width:1500px) and (min-height:1100px){
+  .home-hero{min-height:calc(100vh - 88px)}
 }
 .hero-identity{display:flex;align-items:center;justify-content:center}
 .profile-orbit{

@@ -642,11 +642,12 @@ h2{font-family:Georgia,serif;font-size:clamp(26px,3.5vw,42px);letter-spacing:0;l
 .focus-tags span{display:inline-flex;align-items:center;min-height:29px;padding:0 11px;border-radius:999px;border:1px solid rgba(125,211,252,0.17);background:rgba(8,11,18,0.34);color:rgba(215,221,232,0.82);font-size:11px;font-weight:750;line-height:1}
 .software-tools-link{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px 22px;margin-top:14px;padding:20px 22px;background:linear-gradient(180deg,rgba(255,255,255,0.13),rgba(255,255,255,0.052) 48%,rgba(255,255,255,0.026)) padding-box,linear-gradient(150deg,rgba(17,23,42,0.86),rgba(23,23,64,0.64)) padding-box,linear-gradient(125deg,rgba(125,211,252,0.42),rgba(167,139,250,0.28),rgba(125,211,252,0.18)) border-box;box-shadow:inset 0 1px 0 rgba(255,255,255,0.125),0 24px 72px rgba(0,0,0,0.26),0 0 34px rgba(125,211,252,0.055);transition:transform 0.18s,border-color 0.18s,box-shadow 0.18s}
 .software-tools-link::before{content:"";position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg,rgba(125,211,252,0.46),rgba(167,139,250,0.24),transparent);opacity:0.66;pointer-events:none}
-.software-tools-link:hover,.software-tools-link:focus-visible{transform:translateY(-2px);border-color:rgba(125,211,252,0.26);box-shadow:0 20px 56px rgba(0,0,0,0.22),0 0 24px rgba(125,211,252,0.085);outline:none}
+.software-tools-link:hover,.software-tools-link:focus-within{transform:translateY(-2px);border-color:rgba(125,211,252,0.26);box-shadow:0 20px 56px rgba(0,0,0,0.22),0 0 24px rgba(125,211,252,0.085);outline:none}
 .software-tools-link .card-kicker{grid-column:1/-1;margin-bottom:0}
 .software-tools-body{display:grid;gap:7px;min-width:0}
 .software-tools-title{color:var(--text);font-size:16px;font-weight:900;letter-spacing:0}
 .software-tools-copy{max-width:650px;color:rgba(183,193,209,0.95);font-size:13px;line-height:1.7}
+.software-tools-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;align-self:center}
 .software-tools-link .inline-link{margin-top:0;white-space:nowrap;align-self:center;min-height:34px;padding:0 13px;border-radius:999px;border:1px solid transparent;background:linear-gradient(180deg,rgba(15,23,36,0.9),rgba(8,11,18,0.82)) padding-box,linear-gradient(120deg,rgba(125,211,252,0.44),rgba(167,139,250,0.34),rgba(125,211,252,0.26)) border-box;color:var(--blue);box-shadow:inset 0 1px 0 rgba(255,255,255,0.045)}
 .software-product-name{margin-top:-6px;color:var(--blue);font-size:clamp(28px,6vw,52px);font-weight:900;letter-spacing:0.01em;line-height:1;text-shadow:0 0 24px rgba(125,211,252,0.16)}
 .software-title .legal-mark{display:inline-block;margin:0 0.02em;transform:translateY(-0.38em);font-family:'Inter',system-ui,sans-serif;font-size:0.26em;font-weight:900;letter-spacing:0;color:rgba(215,221,232,0.72);text-shadow:0 0 14px rgba(125,211,252,0.22)}
@@ -828,6 +829,7 @@ footer{padding:30px 0 8px;display:flex;align-items:center;justify-content:space-
   .focus-band{flex-direction:column;gap:12px}
   .focus-tags{justify-content:flex-start}
   .software-tools-link{grid-template-columns:1fr;gap:8px;padding:18px}
+  .software-tools-actions{justify-content:flex-start}
   .software-tools-link .inline-link{padding-top:4px}
   .software-app-link{grid-template-columns:56px minmax(0,1fr);gap:12px;padding:11px 12px}
   .euuuh-app-mark{width:56px;height:56px;border-radius:17px}

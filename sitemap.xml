@@ -38,7 +38,19 @@
   </url>
   <url>
     <loc>https://sifaks.com/blog.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sifaks.com/blog-euuuhfrench-ai-from-mvp-audio-to-pronunciation-coach.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sifaks.com/blog-euuuhfrench-ai-changelog.html</loc>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

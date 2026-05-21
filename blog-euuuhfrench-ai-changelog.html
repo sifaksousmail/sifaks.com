@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="A public EuuuhFrench AI changelog by Sifaks Ousmail, following the app from early MVP audio practice to the current v1.10 pronunciation coach with native audio, replay, Speechace feedback, mouth-shape support, Smart Review, and progress guidance.">
+  <meta property="og:title" content="EuuuhFrench AI Changelog - v0.0 to v1.10">
+  <meta property="og:description" content="The release story behind EuuuhFrench AI: MVP audio, recording replay, API-backed pronunciation feedback, mouth-shape guidance, Smart Review, progress, and compact coaching for Chinese-speaking learners of French.">
+  <meta property="og:image" content="https://sifaks.com/assets/blog/euuuhfrench-ai-v14-lessons.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sifaks.com/blog-euuuhfrench-ai-changelog.html">
+  <meta property="og:site_name" content="Sifaks Ousmail">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EuuuhFrench AI Changelog - v0.0 to v1.10">
+  <meta name="twitter:description" content="A release archive for EuuuhFrench AI, from MVP audio practice to the current compact pronunciation coach.">
+  <meta name="twitter:image" content="https://sifaks.com/assets/blog/euuuhfrench-ai-v14-lessons.png">
+  <title>EuuuhFrench AI Changelog - v0.0 to v1.10 | Sifaks Ousmail</title>
+  <link rel="canonical" href="https://sifaks.com/blog-euuuhfrench-ai-changelog.html">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="styles.css?v=20260514-v12-polish">
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "EuuuhFrench AI Changelog - v0.0 to v1.10",
+      "description": "A public EuuuhFrench AI changelog following the app from early MVP audio practice to the current v1.10 pronunciation coach with native audio, replay, Speechace feedback, mouth-shape support, Smart Review, and progress guidance.",
+      "image": "https://sifaks.com/assets/blog/euuuhfrench-ai-v14-lessons.png",
+      "datePublished": "2026-05-21T00:00:00+08:00",
+      "dateModified": "2026-05-21T00:00:00+08:00",
+      "author": {
+        "@type": "Person",
+        "name": "Sifaks Ousmail",
+        "url": "https://sifaks.com/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Sifaks Ousmail",
+        "url": "https://sifaks.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sifaks.com/blog-euuuhfrench-ai-changelog.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sifaks.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://sifaks.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "EuuuhFrench AI Changelog - v0.0 to v1.10"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" data-no-translate href="index.html">
+        <span class="brand-home-stack"><img class="brand-mark" data-no-translate src="/favicon.svg" alt="Sifaks Ousmail logo"><span class="brand-home">Home</span></span>
+        <span class="brand-text-stack"><span>Sifaks Ousmail</span><span class="brand-domain">sifaks.com</span></span>
+      </a>
+      <div class="nav-right">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="background.html">About</a>
+        <a class="nav-link active" href="blog.html" aria-current="page">Blog</a>
+        <div class="more-menu" id="moreMenu">
+          <button class="more-btn" id="moreBtn" type="button" aria-expanded="false" aria-controls="countryMenu">
+            More
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <polyline points="2,4 6,8 10,4"/>
+            </svg>
+          </button>
+          <div class="dropdown" id="countryMenu" aria-label="Site menu">
+            <div class="drop-group mobile-main-links">
+              <p class="drop-group-title">Main links</p>
+              <a class="drop-item" href="index.html">Home</a>
+              <a class="drop-item" href="background.html">About</a>
+              <a class="drop-item" href="research.html">Research</a>
+              <a class="drop-item" href="projects.html">Projects</a>
+              <a class="drop-item" href="publications.html">Publications</a>
+              <a class="drop-item active" href="blog.html" aria-current="page">Blog</a>
+              <a class="drop-item" href="contact.html">Contact</a>
+            </div>
+            <div class="drop-group">
+              <p class="drop-group-title">More links</p>
+              <a class="drop-item desktop-drop-link" href="research.html">Research</a>
+              <a class="drop-item desktop-drop-link" href="projects.html">Projects</a>
+              <a class="drop-item desktop-drop-link" href="publications.html">Publications</a>
+              <a class="drop-item" href="china.html"><span class="flag" aria-hidden="true">🇨🇳</span> China</a>
+              <a class="drop-item" href="uk.html"><span class="flag" aria-hidden="true">🇬🇧</span> UK</a>
+              <a class="drop-item" href="france.html"><span class="flag" aria-hidden="true">🇫🇷</span> France</a>
+              <a class="software-drop-cta mobile-software-cta" href="software.html">
+                <span class="software-drop-main" data-i18n="nav.softwareCtaTitle">SIFAKS © Software</span>
+                <span class="software-drop-sub" data-i18n="nav.softwareCtaSub">AI French pronunciation for Chinese speakers</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a class="software-nav-cta" href="software.html" data-i18n="nav.softwareCtaTitle">SIFAKS © Software</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <article class="blog-post">
+        <header class="hero blog-post-hero">
+          <img class="hero-logo" data-no-translate src="/favicon.svg" alt="Sifaks Ousmail logo">
+          <p class="kicker">SIFAKS Software</p>
+          <h1>EuuuhFrench AI Changelog - v0.0 to v1.10</h1>
+          <p class="lead">A public release archive for EuuuhFrench AI, from the first MVP audio loop to the current compact pronunciation coach.</p>
+        </header>
+
+        <section class="section blog-article-section">
+          <div class="blog-article-body glass">
+            <p>EuuuhFrench AI now combines native French audio examples, learner recording replay, mouth-shape guidance, correction prompts, progress signals, and API-backed pronunciation assessment. Feedback wording has also been refined so unclear recordings receive useful guidance rather than misleading scores.</p>
+
+            <p>This changelog keeps the public story readable. It does not list every commit. Instead, it follows the main release phases that changed what learners could actually do inside the app.</p>
+
+            <figure class="post-article-image">
+              <img src="assets/blog/euuuhfrench-ai-v14-today-practice.png" width="1440" height="840" alt="EuuuhFrench AI home screen with the Start today's practice button.">
+            </figure>
+
+            <h2>v0.0 - Idea and skeleton</h2>
+            <p>The project began as a focused pronunciation tool for Chinese-speaking learners of French. The aim was deliberately narrow: not a full French course, but short, repeatable practice for difficult sounds.</p>
+            <p>The early skeleton established the app direction: lesson targets, native audio planning, recording and feedback routes, local progress ideas, and a future path for real pronunciation assessment.</p>
+
+            <h2>v0.1 - First working MVP audio loop</h2>
+            <p>The first stable MVP made the core learning flow usable. Learners could choose a target sound, listen to a native French example, record their own attempt, replay it, receive basic feedback, and try again.</p>
+            <p>This version proved the main interaction: pronunciation practice needs a model, a learner attempt, a replay moment, and a small correction prompt. Without that loop, extra features would not matter.</p>
+
+            <h2>v0.2 to v0.6 - Assessment, onboarding, and mouth-shape support</h2>
+            <p>The next phase made the prototype less like a demo and more like a learning tool. Recording behavior became more stable, Speechace-backed assessment was prepared and calibrated, and feedback became more careful about target detection.</p>
+            <p>Onboarding and guided practice were also improved so a new learner could understand what to do without reading a long explanation. Mouth-shape help started with French /y/ and gradually moved toward broader visual guidance for difficult sounds.</p>
+
+            <figure class="post-article-image">
+              <img src="assets/blog/euuuhfrench-ai-mouth-shape-preview.jpg" width="1440" height="840" alt="EuuuhFrench AI mouth-shape guidance preview for pronunciation practice.">
+            </figure>
+
+            <h2>v1.0 - Polished MVP</h2>
+            <p>Version 1.0 was the first version that felt like a real app. It combined native French audio examples, learner recording, replay, pronunciation feedback, retry support, mouth-shape guidance, a basic lesson chooser, a completion flow, a progress page, and clearer privacy and terms pages.</p>
+            <p>If real pronunciation scoring is not available, the app can use a preview mode so the learning flow remains usable while avoiding false assessment claims. The assessment layer was improved for target detection and feedback reliability, but it remains AI-assisted pronunciation feedback, not a claim of a proprietary AI model, and not a replacement for teaching.</p>
+            <p><strong>Prototype status:</strong> v1.0 was the first working public MVP. It was still early, but the core learning flow was usable: native audio, recording, replay, pronunciation feedback, retry support, and video guidance for difficult sounds.</p>
+
+            <h2>v1.1 to v1.3 - Practice modes and nasal vowels</h2>
+            <p>After the MVP, the app expanded beyond isolated word practice. It added Quick Lesson, Word Practice, and Sentence Practice so learners could move between short sound work and more contextual French examples.</p>
+            <p>Nasal vowels became a major content milestone. The app added more practice for /ɑ̃/, /ɔ̃/, and /ɛ̃/, including better examples, feedback paths, and mouth-shape support. This mattered because nasal vowels are not just a spelling issue; they require learners to notice a different sound category.</p>
+
+            <figure class="post-article-image">
+              <img src="assets/blog/euuuhfrench-ai-v14-practice-modes.png" width="1440" height="840" alt="EuuuhFrench AI practice screen showing lesson, word, and sentence practice modes.">
+            </figure>
+
+            <h2>v1.4 to v1.5 - Progress, contrast practice, and Smart Review</h2>
+            <p>The app then became a more complete learning product. It added /u/ versus /y/ contrast work, local progress, optional account sync, PWA support, onboarding tutorial polish, streaks, and clearer privacy messaging.</p>
+            <p>Smart Review changed the feel of the app. Instead of only asking learners to pick something manually, EuuuhFrench AI began suggesting the next useful practice step. Contrast ladders such as rue/roue, tu/tout, peu/peur, deux/doux, and vin/vent made practice more precise.</p>
+
+            <h2>v1.6 to v1.9 - Feedback quality, progress insight, and trust</h2>
+            <p>This phase focused on making the coach more reliable and less harsh. Feedback became more pedagogical, especially for nasal contrasts, short words, unclear recordings, and provider-related uncertainty.</p>
+            <p>The Progress page also became more useful: repetition levels, lesson history, streaks, sync status, per-sound stats, and a daily 5-minute coach plan helped learners understand what they had practised and what to repeat next.</p>
+            <p>The trust work was important. Native audio reliability was checked, legal/about/progress copy was polished, and the app stayed careful about what automated pronunciation scoring can and cannot claim.</p>
+
+            <h2>v1.10 - Current pronunciation coach polish</h2>
+            <p>The current version is more compact and more focused. After recording, learners see the latest score, their own recording, the native speaker model, one pronunciation feedback card, collapsed attempt history, sound-specific Mandarin-friendly tips, and video support only after repeated difficulty.</p>
+            <p>Pass scores stay clean. A weak first attempt gets short written help. A weak second attempt can unlock video. Repeated difficulty keeps video available and offers continue or review-later actions. No-score attempts can still show useful sound tips unless the issue is a provider or API failure.</p>
+
+            <figure class="post-article-image">
+              <img src="assets/blog/euuuhfrench-ai-v14-lessons.png" width="1440" height="840" alt="EuuuhFrench AI lesson page showing core sounds and contrast practice sections.">
+            </figure>
+
+            <p>As of now, the project serves as a bridge between applied linguistics research and practical language education design: a focused pronunciation software for Chinese-speaking learners of French, built around concrete French pronunciation learning problems.</p>
+
+            <section class="post-dev-notes" aria-labelledby="behind-scenes-toggle-label">
+              <div class="post-dev-notes-toggle-wrap">
+                <button class="dev-notes-toggle" type="button" aria-expanded="false" aria-controls="behind-scenes-panel">
+                  <span id="behind-scenes-toggle-label">View technical changelog</span>
+                  <span class="scroll-arrow" aria-hidden="true">↓</span>
+                </button>
+              </div>
+
+              <div class="post-dev-notes-panel" id="behind-scenes-panel" hidden>
+                <h2>Technical changelog</h2>
+                <p>These notes keep the development history compact, but closer to how the app is organized in code: routes, components, API boundaries, content files, tests, assets, and release checks.</p>
+
+                <div class="dev-notes-group">
+                  <h3>v0.1 - MVP audio loop</h3>
+                  <ul class="dev-notes-list dev-notes-commands">
+                    <li><code>app/</code> routes for the first practice flow</li>
+                    <li><code>components/practice/PracticeFlow.tsx</code></li>
+                    <li><code>components/Recorder.tsx</code></li>
+                    <li><code>components/TargetCard.tsx</code></li>
+                    <li><code>lib/pronunciation/*</code> demo assessment adapters</li>
+                    <li><code>public/audio/fr/</code> native French examples</li>
+                    <li><code>lib/localProgress.ts</code> local attempt history</li>
+                    <li><code>lib/i18n.ts</code> EN / FR / 中文 copy</li>
+                  </ul>
+                </div>
+
+                <div class="dev-notes-group">
+                  <h3>v0.2 to v0.6 - Provider and guidance layer</h3>
+                  <ul class="dev-notes-list dev-notes-commands">
+                    <li><code>app/api/pronunciation/assess/route.ts</code></li>
+                    <li><code>lib/pronunciation/apiAdapter.ts</code></li>
+                    <li><code>lib/pronunciation/providers/*</code></li>
+                    <li><code>lib/coaching/rules.ts</code></li>
+                    <li><code>lib/practice/stateMachine.ts</code></li>
+                    <li><code>components/OnboardingCard.tsx</code></li>
+                    <li><code>components/HomePageClient.tsx</code></li>
+                    <li><code>public/video/mouth/</code> mouth-shape support</li>
+                  </ul>
+                </div>
+
+                <div class="dev-notes-group">
+                  <h3>v1.0 - Polished MVP</h3>
+                  <ul class="dev-notes-list dev-notes-commands">
+                    <li><code>/practice</code> recording and retry flow</li>
+                    <li><code>/feedback</code> normalized feedback view</li>
+                    <li><code>/progress</code> local progress page</li>
+                    <li><code>/privacy</code> and <code>/terms</code> legal pages</li>
+                    <li><code>/api/audio/example</code> native audio endpoint</li>
+                    <li><code>/api/pronunciation/assess</code> assessment boundary</li>
+                    <li><code>app/globals.css</code> mobile layout polish</li>
+                    <li><code>lib/i18n.ts</code> multilingual UI copy</li>
+                  </ul>
+                </div>
+
+                <div class="dev-notes-group">
+                  <h3>v1.1 to v1.3 - Practice modes and nasal vowels</h3>
+                  <ul class="dev-notes-list dev-notes-commands">
+                    <li><code>lib/content/practiceModes.ts</code></li>
+                    <li><code>lib/content/lessons.ts</code></li>
+                    <li><code>lib/audio/frenchExamples.ts</code></li>
+                    <li><code>components/practice/PracticeFlow.tsx</code></li>
+                    <li><code>practiceModes.test.ts</code></li>
+                    <li><code>Speechace mapper tests</code></li>
+                    <li><code>public/video/mouth/sound-an.mp4</code></li>
+                    <li><code>public/video/mouth/sound-on.mp4</code></li>
+                  </ul>
+                </div>
+
+                <div class="dev-notes-group">
+                  <h3>v1.4 to v1.5 - Progress, account, and Smart Review</h3>
+                  <ul class="dev-notes-list dev-notes-commands">
+                    <li><code>components/ProgressSummary.tsx</code></li>
+                    <li><code>lib/progressDashboard.ts</code></li>
+                    <li><code>lib/practice/smartReview.ts</code></li>
+                    <li><code>lib/homePracticePlan.ts</code></li>
+                    <li><code>lib/authClient.ts</code> and <code>authActions</code></li>
+                    <li><code>lib/cloudProgress.ts</code></li>
+                    <li><code>supabase learner progress migrations</code></li>
+                    <li><code>manifest</code> and <code>service worker</code> PWA files</li>
+                  </ul>
+                </div>
+
+                <div class="dev-notes-group">
+                  <h3>v1.6 to v1.9 - Feedback quality and trust layer</h3>
+                  <ul class="dev-notes-list dev-notes-commands">
+                    <li><code>docs/v1.6-plan.md</code></li>
+                    <li><code>lib/feedbackDisplay.ts</code></li>
+                    <li><code>completionSummary.ts</code></li>
+                    <li><code>dailyCoachPlan.ts</code></li>
+                    <li><code>nativeAudioAudit.ts</code></li>
+                    <li><code>syncStatus.ts</code></li>
+                    <li><code>sessionMemory.ts</code></li>
+                    <li><code>progress insight tests</code></li>
+                  </ul>
+                </div>
+
+                <div class="dev-notes-group">
+                  <h3>v1.10 - Compact pronunciation coach</h3>
+                  <ul class="dev-notes-list dev-notes-commands">
+                    <li><code>learnerProfile.ts</code></li>
+                    <li><code>practiceCardState</code> video and tip gates</li>
+                    <li><code>feedbackDisplay</code> attempt rules</li>
+                    <li><code>PracticeFlow</code> compact result UI</li>
+                    <li><code>weakest / strongest / improving</code> sound signals</li>
+                    <li><code>collapsed attempt history</code></li>
+                    <li><code>Mandarin-friendly sound tips</code></li>
+                    <li><code>mobile spacing polish</code></li>
+                  </ul>
+                </div>
+
+                <div class="dev-notes-group">
+                  <h3>App release checks</h3>
+                  <ul class="dev-notes-list dev-notes-commands">
+                    <li><code>npm run lint</code></li>
+                    <li><code>npm test</code></li>
+                    <li><code>npm run build</code></li>
+                    <li><code>git diff --check</code></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <div class="post-link-panel">
+              <a class="btn btn-primary" href="blog-euuuhfrench-ai-from-mvp-audio-to-pronunciation-coach.html">Read the story version</a>
+              <a class="btn btn-secondary" href="https://app.sifaks.com" target="_blank" rel="noopener noreferrer">Open app preview</a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <span>© 2026 Sifaks Ousmail</span>
+      <a class="footer-github-link" href="https://github.com/sifaksousmail" target="_blank" rel="noopener noreferrer" data-i18n-attr="aria-label:footer.githubAria" aria-label="Visit Sifaks Ousmail GitHub profile" data-no-translate></a>
+      <span>sifaks.com</span>
+    </footer>
+  </div>
+
+  <script src="script.js?v=20260514-v12-polish"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="A public development story by Sifaks Ousmail on how EuuuhFrench AI grew from a small MVP audio loop into a focused French pronunciation coach for Chinese-speaking learners.">
+  <meta property="og:title" content="EuuuhFrench AI - From MVP Audio to a Pronunciation Coach">
+  <meta property="og:description" content="How EuuuhFrench AI moved from native audio, recording, and replay toward compact feedback, Smart Review, progress signals, and Mandarin-friendly pronunciation tips.">
+  <meta property="og:image" content="https://sifaks.com/assets/blog/euuuhfrench-ai-v14-today-practice.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sifaks.com/blog-euuuhfrench-ai-from-mvp-audio-to-pronunciation-coach.html">
+  <meta property="og:site_name" content="Sifaks Ousmail">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EuuuhFrench AI - From MVP Audio to a Pronunciation Coach">
+  <meta name="twitter:description" content="A concise development story about the first EuuuhFrench AI releases and the current compact pronunciation coach.">
+  <meta name="twitter:image" content="https://sifaks.com/assets/blog/euuuhfrench-ai-v14-today-practice.png">
+  <title>EuuuhFrench AI - From MVP Audio to a Pronunciation Coach | Sifaks Ousmail</title>
+  <link rel="canonical" href="https://sifaks.com/blog-euuuhfrench-ai-from-mvp-audio-to-pronunciation-coach.html">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="styles.css?v=20260514-v12-polish">
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "EuuuhFrench AI - From MVP Audio to a Pronunciation Coach",
+      "description": "A public development story by Sifaks Ousmail on how EuuuhFrench AI grew from a small MVP audio loop into a focused French pronunciation coach for Chinese-speaking learners.",
+      "image": "https://sifaks.com/assets/blog/euuuhfrench-ai-v14-today-practice.png",
+      "datePublished": "2026-05-21T00:00:00+08:00",
+      "dateModified": "2026-05-21T00:00:00+08:00",
+      "author": {
+        "@type": "Person",
+        "name": "Sifaks Ousmail",
+        "url": "https://sifaks.com/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Sifaks Ousmail",
+        "url": "https://sifaks.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sifaks.com/blog-euuuhfrench-ai-from-mvp-audio-to-pronunciation-coach.html"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sifaks.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://sifaks.com/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "EuuuhFrench AI - From MVP Audio to a Pronunciation Coach"
+        }
+      ]
+    }
+  ]
+  </script>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" data-no-translate href="index.html">
+        <span class="brand-home-stack"><img class="brand-mark" data-no-translate src="/favicon.svg" alt="Sifaks Ousmail logo"><span class="brand-home">Home</span></span>
+        <span class="brand-text-stack"><span>Sifaks Ousmail</span><span class="brand-domain">sifaks.com</span></span>
+      </a>
+      <div class="nav-right">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="background.html">About</a>
+        <a class="nav-link active" href="blog.html" aria-current="page">Blog</a>
+        <div class="more-menu" id="moreMenu">
+          <button class="more-btn" id="moreBtn" type="button" aria-expanded="false" aria-controls="countryMenu">
+            More
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <polyline points="2,4 6,8 10,4"/>
+            </svg>
+          </button>
+          <div class="dropdown" id="countryMenu" aria-label="Site menu">
+            <div class="drop-group mobile-main-links">
+              <p class="drop-group-title">Main links</p>
+              <a class="drop-item" href="index.html">Home</a>
+              <a class="drop-item" href="background.html">About</a>
+              <a class="drop-item" href="research.html">Research</a>
+              <a class="drop-item" href="projects.html">Projects</a>
+              <a class="drop-item" href="publications.html">Publications</a>
+              <a class="drop-item active" href="blog.html" aria-current="page">Blog</a>
+              <a class="drop-item" href="contact.html">Contact</a>
+            </div>
+            <div class="drop-group">
+              <p class="drop-group-title">More links</p>
+              <a class="drop-item desktop-drop-link" href="research.html">Research</a>
+              <a class="drop-item desktop-drop-link" href="projects.html">Projects</a>
+              <a class="drop-item desktop-drop-link" href="publications.html">Publications</a>
+              <a class="drop-item" href="china.html"><span class="flag" aria-hidden="true">🇨🇳</span> China</a>
+              <a class="drop-item" href="uk.html"><span class="flag" aria-hidden="true">🇬🇧</span> UK</a>
+              <a class="drop-item" href="france.html"><span class="flag" aria-hidden="true">🇫🇷</span> France</a>
+              <a class="software-drop-cta mobile-software-cta" href="software.html">
+                <span class="software-drop-main" data-i18n="nav.softwareCtaTitle">SIFAKS © Software</span>
+                <span class="software-drop-sub" data-i18n="nav.softwareCtaSub">AI French pronunciation for Chinese speakers</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a class="software-nav-cta" href="software.html" data-i18n="nav.softwareCtaTitle">SIFAKS © Software</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <article class="blog-post">
+        <header class="hero blog-post-hero">
+          <img class="hero-logo" data-no-translate src="/favicon.svg" alt="Sifaks Ousmail logo">
+          <p class="kicker">SIFAKS Software</p>
+          <h1>EuuuhFrench AI - From MVP Audio to a Pronunciation Coach</h1>
+          <p class="lead">A short development story about turning a small pronunciation practice loop into a focused French pronunciation coach for Chinese-speaking learners.</p>
+        </header>
+
+        <section class="section blog-article-section">
+          <div class="blog-article-body glass">
+            <p>EuuuhFrench AI started with a deliberately narrow goal: help learners practise the French sounds that are often difficult when coming from Mandarin Chinese. It was not meant to become a full French course. The useful unit was smaller: listen, record, replay, notice one thing, and try again.</p>
+
+            <figure class="post-article-image">
+              <img src="assets/blog/euuuhfrench-ai-home-preview.jpg" width="1440" height="840" alt="EuuuhFrench AI home preview with pronunciation practice entry points.">
+            </figure>
+
+            <h2>The first useful loop</h2>
+            <p>The earliest stable version was built around native French examples, learner recording, replay, and basic feedback. That loop mattered because pronunciation practice can become vague very quickly. A learner needs a model, a chance to produce the sound, and a way to compare the attempt with something concrete.</p>
+
+            <p>From there, the app moved from demo-style feedback toward provider-backed pronunciation analysis. Speechace support made the feedback feel more grounded, but I kept the product wording careful. Automated pronunciation feedback can be useful, but it should not pretend to know everything a human teacher can hear.</p>
+
+            <h2>From words to guided practice</h2>
+            <p>The next step was content. Isolated sounds are useful, but learners also need words, sentences, and contrast pairs. Practice modes added more structure: quick lessons, word practice, sentence practice, and focused work on sounds such as /y/, /u/, /ø/, /œ/, and the French nasal vowels.</p>
+
+            <figure class="post-article-image">
+              <img src="assets/blog/euuuhfrench-ai-v14-practice-modes.png" width="1440" height="840" alt="EuuuhFrench AI practice screen showing lesson, word, and sentence practice modes.">
+            </figure>
+
+            <p>Nasal vowels became a major content milestone. They are difficult for many learners because the contrast is not only about one letter or one spelling pattern. The app gradually added examples, feedback paths, and mouth-shape support for sounds such as /ɑ̃/, /ɔ̃/, and /ɛ̃/.</p>
+
+            <h2>Progress without noise</h2>
+            <p>As the practice bank grew, progress needed to become more useful. The app added local progress, optional account sync, Smart Review, daily practice planning, and per-sound signals. The purpose was not to turn learning into a scoreboard. It was to help the learner know what to practise next.</p>
+
+            <p>The progress work also made the app feel more complete: returning learners could see repetition history, review recent attempts, and move through short sessions without losing the thread of their practice.</p>
+
+            <h2>Where the coach stands now</h2>
+            <p>The current v1.10 direction is compact and practical. After recording, the learner sees the latest score, their own recording, the native model, one pronunciation feedback card, and optional history only when needed. Sound-specific tips are short and Mandarin-friendly. Mouth videos appear after repeated difficulty, not immediately for every attempt.</p>
+
+            <figure class="post-article-image">
+              <img src="assets/blog/euuuhfrench-ai-v14-lessons.png" width="1440" height="840" alt="EuuuhFrench AI lesson page showing core sounds and contrast practice sections.">
+            </figure>
+
+            <p>This is the shape I want the app to keep: focused pronunciation practice, clear native audio, careful AI-assisted feedback, and a calm rhythm of repetition. It remains experimental and research-informed, but it is now much closer to a real pronunciation coach than a first MVP.</p>
+
+            <p>For readers who want the development archive rather than the story version, I also keep a concise changelog from the first idea to the current pronunciation coach polish.</p>
+
+            <div class="post-link-panel">
+              <a class="btn btn-primary" href="blog-euuuhfrench-ai-changelog.html">Read the changelog archive →</a>
+              <a class="btn btn-secondary" href="https://app.sifaks.com" target="_blank" rel="noopener noreferrer">Open app preview</a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <span>© 2026 Sifaks Ousmail</span>
+      <a class="footer-github-link" href="https://github.com/sifaksousmail" target="_blank" rel="noopener noreferrer" data-i18n-attr="aria-label:footer.githubAria" aria-label="Visit Sifaks Ousmail GitHub profile" data-no-translate></a>
+      <span>sifaks.com</span>
+    </footer>
+  </div>
+
+  <script src="script.js?v=20260514-v12-polish"></script>
+</body>
+</html>

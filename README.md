@@ -1,18 +1,20 @@
 # sifaks.com
 
-A clean personal academic website for **Sifaks Ousmail**.
+Official personal academic website of **Sifaks Ousmail**.
+
+This repository contains the source code for [sifaks.com](https://sifaks.com), a lightweight static website built with HTML, CSS, and client-side JavaScript.
 
 ## Overview
 
-This repository contains the source code for [sifaks.com](https://sifaks.com), a lightweight static website built with HTML, CSS, and simple client-side JavaScript.
+The website presents my academic profile, research interests, international background, projects, publications, and contact information.
 
-The site presents:
+Main themes (to this day :p) include:
 
-- Academic profile
-- Research interests
-- International academic background
-- Publications and projects
-- Contact information
+- Applied linguistics
+- Second language acquisition
+- AI-assisted language learning
+- French pronunciation learning
+- Educational technology
 
 ## Project Structure
 
@@ -32,19 +34,28 @@ The site presents:
 
 ## Local Preview
 
-Open `index.html` directly in a browser, or run a local server:
+Run a local server from the project folder:
 
 ```bash
 python3 -m http.server 8000
+```
+
 Then visit:
+
+```text
 http://localhost:8000
-eployment
+```
+
+## Deployment
 
 This website is deployed as a static site using GitHub Pages and connected to the custom domain:
 
+```text
 https://sifaks.com
+```
 
-License
+## License
 
 This project is licensed under the MIT License © 2026 Sifaks Ousmail.
-See the LICENSE file for full terms.
+
+See the `LICENSE` file for full terms.

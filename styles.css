@@ -763,6 +763,27 @@ footer{padding:30px 0 8px;display:flex;align-items:center;justify-content:space-
 }
 
 @media(max-width:759px){
+  body::before,.site-background::before{
+    filter:blur(18px) saturate(1.08);
+    opacity:0.62;
+    animation:none;
+  }
+  .site-background-parallax{will-change:auto;transform:none!important}
+  .site-aurora-blob{
+    filter:blur(32px) saturate(1.08);
+    opacity:0.56;
+    animation:none;
+  }
+  .shader-background{opacity:0.32;filter:saturate(1.04) contrast(1.05)}
+  .language-switcher,.dropdown,.nav-link,.software-nav-cta,.more-btn,.software-drop-cta,.pill,.hero-scroll-cue,.continue-scroll-cue,.dev-notes-toggle,.btn,.glass{
+    -webkit-backdrop-filter:blur(10px) saturate(1.06);
+    backdrop-filter:blur(10px) saturate(1.06);
+  }
+  .language-switcher button.is-active,.nav-link,.software-nav-cta,.software-nav-cta::after,.more-btn,.software-drop-cta,.software-drop-cta::after,.learning-actions a,.external-link-panel a,.lang-token,.hero::before,.hero::after,.hero-scroll-cue,.hero-scroll-cue::after,.hero-scroll-cue .scroll-arrow,.continue-scroll-cue,.continue-scroll-cue::after,.continue-scroll-cue .scroll-arrow,.dev-notes-toggle,.dev-notes-toggle::after,.dev-notes-toggle .scroll-arrow,.btn,.btn::after,.github-profile-card,.github-card-link,.footer-github-link{
+    animation:none;
+  }
+  .hero::before{opacity:0.54;filter:blur(3px)}
+  .hero::after{display:none}
   body.cursor-tube-visible .site-cursor-tube-canvas{opacity:0.3}
   .site-cursor-tube-canvas{filter:saturate(0.9) brightness(0.92);transform:translateZ(0) scale(0.82)}
   .site-cursor-aura{width:86px;height:86px}
@@ -783,7 +804,7 @@ footer{padding:30px 0 8px;display:flex;align-items:center;justify-content:space-
   .brand-domain{font-size:7px;letter-spacing:0.085em}
   .brand-mark{width:36px;height:36px}
   .hero{padding:22px 0 32px;gap:14px}
-  .home-hero{min-height:auto;padding:30px 0 42px}
+  .home-hero{min-height:calc(100vh - 88px);min-height:calc(100svh - 88px);justify-content:center;padding:34px 0 clamp(70px,12svh,116px)}
   .hero::before{top:-62px;width:390px;height:390px}
   .hero::after{top:-6px;width:178px;height:178px}
   .desktop-drop-link{display:none}
@@ -791,7 +812,7 @@ footer{padding:30px 0 8px;display:flex;align-items:center;justify-content:space-
   .hero-profile-badge{right:4px;bottom:8px;width:50px;height:50px;padding:5px}
   .hero-logo{width:96px;height:96px}
   .home-hero .lead{max-width:340px;font-size:15px;line-height:1.72}
-  .hero-scroll-cue{min-height:46px;min-width:142px;padding:0 22px;font-size:13px}
+  .hero-scroll-cue{min-height:46px;min-width:142px;margin-top:clamp(10px,2.6svh,24px);padding:0 22px;font-size:13px}
   .continue-scroll-wrap{margin-top:18px}
   .continue-scroll-cue{min-height:38px;padding:0 16px;font-size:12px}
   h1{max-width:100%;font-size:clamp(40px,15vw,64px);line-height:0.96}

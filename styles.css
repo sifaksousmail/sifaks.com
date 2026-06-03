@@ -1,4 +1,5 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;border:0}
 :root{
   --bg:#080b12;--card:rgba(255,255,255,0.065);--border:rgba(255,255,255,0.12);
   --surface:rgba(11,17,30,0.64);--surface-strong:rgba(12,18,31,0.82);

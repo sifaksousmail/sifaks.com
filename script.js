@@ -99,6 +99,7 @@ const initSoftwareHero = () => {
     if (!video || !videoSource) return;
     const sourcePath = videoSource.dataset.src;
     video.preload = 'auto';
+    video.loop = true;
     if (sourcePath && videoSource.getAttribute('src') !== sourcePath) {
       videoSource.setAttribute('src', sourcePath);
       video.load();
@@ -109,6 +110,11 @@ const initSoftwareHero = () => {
     if (!video) return;
     loadHeroVideo();
     video.play().catch(() => {});
+  };
+
+  const maintainSoftLoop = () => {
+    if (!video) return;
+    video.loop = true;
   };
 
   const showSoftwareContent = ({ updateHash = true } = {}) => {
@@ -141,6 +147,7 @@ const initSoftwareHero = () => {
   if (window.location.hash === '#software-content') {
     document.body.classList.add('software-content-active');
   }
+  maintainSoftLoop();
   playHeroVideo();
 };
 

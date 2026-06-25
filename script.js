@@ -86,6 +86,64 @@ scrollCues.forEach((scrollCue) => {
   });
 });
 
+const initSoftwareHero = () => {
+  const videoIntro = document.querySelector('.software-video-intro');
+  const video = document.getElementById('softwareHeroVideo');
+  const videoSource = video?.querySelector('source');
+  const exploreButton = document.querySelector('.software-video-explore');
+  const soundButton = document.querySelector('.software-video-sound');
+
+  if (!videoIntro || !exploreButton) return;
+
+  const loadHeroVideo = () => {
+    if (!video || !videoSource) return;
+    const sourcePath = videoSource.dataset.src;
+    video.preload = 'auto';
+    if (sourcePath && videoSource.getAttribute('src') !== sourcePath) {
+      videoSource.setAttribute('src', sourcePath);
+      video.load();
+    }
+  };
+
+  const playHeroVideo = () => {
+    if (!video) return;
+    loadHeroVideo();
+    video.play().catch(() => {});
+  };
+
+  const showSoftwareContent = ({ updateHash = true } = {}) => {
+    document.documentElement.style.scrollBehavior = 'auto';
+    document.body.classList.add('software-content-active');
+    const targetTop = videoIntro.offsetHeight;
+    scrollToTarget(targetTop, 'smooth');
+
+    if (updateHash) {
+      history.replaceState(null, '', '#software-content');
+    }
+  };
+
+  exploreButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    showSoftwareContent();
+  });
+
+  soundButton?.addEventListener('click', () => {
+    if (!video) return;
+    const nextMuted = !video.muted ? true : false;
+    video.muted = nextMuted;
+    video.volume = 0.72;
+    soundButton.classList.toggle('is-on', !nextMuted);
+    soundButton.setAttribute('aria-pressed', String(!nextMuted));
+    soundButton.setAttribute('aria-label', nextMuted ? 'Turn sound on' : 'Turn sound off');
+    playHeroVideo();
+  });
+
+  if (window.location.hash === '#software-content') {
+    document.body.classList.add('software-content-active');
+  }
+  playHeroVideo();
+};
+
 const translationEntries = [
   ['site.name', 'Sifaks Ousmail', 'Sifaks Ousmail', 'Sifaks Ousmail'],
   ['site.logoAlt', 'Sifaks Ousmail logo', 'Logo de Sifaks Ousmail', 'Sifaks Ousmail 标志'],
@@ -1317,7 +1375,13 @@ const createShaderBackground = () => {
 
 initTranslations();
 initDevNotesToggle();
-createSiteBackground();
-createSiteCursorTube();
-createLanguageClouds();
-createShaderBackground();
+
+const isSoftwarePage = document.body?.classList.contains('software-page');
+if (isSoftwarePage) {
+  initSoftwareHero();
+} else {
+  createSiteBackground();
+  createSiteCursorTube();
+  createLanguageClouds();
+  createShaderBackground();
+}

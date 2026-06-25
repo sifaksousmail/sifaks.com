@@ -660,7 +660,33 @@ h2{font-family:Georgia,serif;font-size:clamp(26px,3.5vw,42px);letter-spacing:0;l
 .software-tools-link .inline-link{margin-top:0;white-space:nowrap;align-self:center;min-height:36px;padding:0 13px;border-radius:999px;border:1px solid transparent;background:linear-gradient(180deg,rgba(15,23,36,0.9),rgba(8,11,18,0.82)) padding-box,linear-gradient(120deg,rgba(125,211,252,0.44),rgba(167,139,250,0.34),rgba(125,211,252,0.26)) border-box;color:var(--blue);box-shadow:inset 0 1px 0 rgba(255,255,255,0.045)}
 .software-product-name{margin-top:-6px;color:var(--blue);font-size:clamp(28px,6vw,52px);font-weight:900;letter-spacing:0.01em;line-height:1;text-shadow:0 0 24px rgba(125,211,252,0.16)}
 .software-title .legal-mark{display:inline-block;margin:0 0.02em;transform:translateY(-0.38em);font-family:'Inter',system-ui,sans-serif;font-size:0.26em;font-weight:900;letter-spacing:0;color:rgba(215,221,232,0.72);text-shadow:0 0 14px rgba(125,211,252,0.22)}
+.software-page{background:#030711}
+.software-page::before,.software-page::after{display:none}
+.software-page .site-background,.software-page .shader-background,.software-page .language-cloud,.software-page .language-switcher{display:none}
+.software-page .page{padding-top:0}
+.software-page .page > .nav{position:fixed;left:50%;top:18px;z-index:60;width:min(1280px,calc(100% - 36px));transform:translateX(-50%);padding:0;pointer-events:auto}
+.software-video-intro{position:relative;isolation:isolate;height:100vh;min-height:680px;overflow:hidden;background:#030711}
+.software-page-backdrop{position:absolute;inset:0;z-index:0;overflow:hidden;background:#030711;pointer-events:none}
+.software-page-video{display:block;width:112%;max-width:none;height:100%;object-fit:contain;object-position:center center;opacity:1;background:#000;transform:translateX(-6%)}
+.software-page-backdrop::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,0,0,0.08),transparent 26%,transparent 78%,rgba(0,0,0,0.08)),linear-gradient(180deg,rgba(0,0,0,0.06),transparent 45%,rgba(0,0,0,0.14));pointer-events:none}
+.software-page-backdrop::after{content:"";position:absolute;inset:0;z-index:2;background:radial-gradient(circle at 50% 112%,rgba(3,7,17,0.22),transparent 36%);pointer-events:none}
+.software-video-controls{position:fixed;left:50%;bottom:clamp(28px,6vh,70px);z-index:70;display:flex;align-items:center;justify-content:center;gap:12px;transform:translateX(-50%)}
+.software-page.software-content-active .software-video-controls{display:flex}
+.software-video-sound{display:grid;place-items:center;width:46px;height:46px;border:1px solid rgba(125,211,252,0.28);border-radius:999px;background:linear-gradient(180deg,rgba(10,17,31,0.82),rgba(5,8,18,0.64)) padding-box,linear-gradient(135deg,rgba(125,211,252,0.48),rgba(167,139,250,0.28)) border-box;color:rgba(215,221,232,0.86);box-shadow:inset 0 1px 0 rgba(255,255,255,0.1),0 14px 36px rgba(0,0,0,0.34);backdrop-filter:blur(14px);cursor:pointer;transition:transform 0.18s,border-color 0.18s,color 0.18s,box-shadow 0.18s}
+.software-video-sound:hover,.software-video-sound:focus-visible{transform:translateY(-1px);border-color:rgba(125,211,252,0.46);color:#f8fafc;box-shadow:inset 0 1px 0 rgba(255,255,255,0.14),0 18px 42px rgba(0,0,0,0.38),0 0 28px rgba(125,211,252,0.12);outline:none}
+.software-video-sound.is-on{color:#9be7ff;border-color:rgba(125,211,252,0.56);box-shadow:inset 0 1px 0 rgba(255,255,255,0.16),0 18px 44px rgba(0,0,0,0.38),0 0 32px rgba(125,211,252,0.18)}
+.software-video-sound svg{width:19px;height:19px;fill:currentColor}
+.software-video-sound .sound-wave{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;opacity:0;transition:opacity 0.18s}
+.software-video-sound.is-on .sound-wave{opacity:1}
+.software-video-explore{gap:10px;min-width:150px;min-height:46px;padding:0 24px;font-size:12px;font-weight:850;letter-spacing:0.04em;text-transform:uppercase}
+.software-video-explore:focus-visible{outline:none}
+.software-hero{min-height:min(760px,calc(100vh - 88px));justify-content:center;overflow:visible;margin-top:10px;padding:clamp(72px,10vw,118px) clamp(18px,5vw,58px) clamp(58px,8vw,92px);border:0;border-radius:0;background:transparent;box-shadow:none}
+.software-hero::before,.software-hero::after{display:none}
+.software-hero > .software-hero-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:16px;width:min(820px,100%);text-align:center}
+.software-hero .hero-logo{width:104px;height:104px}
 .software-hero .lead{max-width:760px}
+.software-hero .actions{margin-top:2px}
+#software-content{scroll-margin-top:86px}
 #preview{scroll-margin-top:92px}
 .software-preview{position:relative;overflow:hidden;padding:26px;background:linear-gradient(150deg,rgba(50,44,112,0.62),rgba(15,31,72,0.58) 42%,rgba(255,255,255,0.052)) padding-box,linear-gradient(180deg,rgba(10,16,31,0.84),rgba(8,11,18,0.62)) padding-box,linear-gradient(135deg,rgba(125,211,252,0.46),rgba(255,255,255,0.12) 26%,rgba(167,139,250,0.36) 58%,rgba(125,211,252,0.18)) border-box;box-shadow:inset 0 1px 0 rgba(255,255,255,0.14),inset 0 -1px 0 rgba(255,255,255,0.04),0 36px 110px rgba(0,0,0,0.4),0 0 48px rgba(125,211,252,0.1)}
 .software-preview::before{content:"";position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg,rgba(255,255,255,0.26),rgba(125,211,252,0.72),rgba(167,139,250,0.44),transparent);pointer-events:none}
@@ -865,6 +891,23 @@ footer{padding:30px 0 8px;display:flex;align-items:center;justify-content:space-
   .software-app-link{grid-template-columns:56px minmax(0,1fr);gap:12px;padding:11px 12px}
   .euuuh-app-mark{width:56px;height:56px;border-radius:17px}
   .euuuh-logo-img{border-radius:0}
+  .software-page .page > .nav{top:12px;width:calc(100% - 22px)}
+  .software-video-intro{height:100svh;min-height:640px}
+  .software-page-video{width:100%;object-fit:cover;object-position:58% center;transform:none}
+  .software-page-backdrop::before{background:linear-gradient(90deg,rgba(0,0,0,0.1),transparent 30%,transparent 74%,rgba(0,0,0,0.08)),linear-gradient(180deg,rgba(0,0,0,0.06),transparent 42%,rgba(0,0,0,0.22))}
+  .software-video-controls{bottom:22px;width:calc(100% - 26px)}
+  .software-video-explore{min-width:132px;min-height:42px;padding:0 18px;font-size:11px}
+  .software-hero{min-height:auto;margin-top:8px;padding:56px 16px 44px;border-radius:22px}
+  .software-hero > .software-hero-content{width:min(100%,340px);gap:13px}
+  .software-hero .hero-logo{width:82px;height:82px}
+  .software-hero .software-title{font-size:clamp(43px,14vw,54px);line-height:0.98;max-width:100%;text-wrap:balance}
+  .software-product-name{max-width:100%;font-size:clamp(25px,7.4vw,30px);line-height:1.12;white-space:normal}
+  .software-hero .pill{padding-inline:10px;font-size:10px;letter-spacing:0.07em}
+  .software-hero .lead{max-width:100%;font-size:14px;line-height:1.78;text-wrap:pretty}
+  .software-hero .actions{width:100%;flex-direction:column;align-items:center}
+  .software-hero .btn{width:min(100%,260px);min-height:44px}
+  .software-page .page > .nav{align-items:center;justify-content:flex-start;flex-wrap:nowrap}
+  .software-page .page > .nav .nav-right{display:none}
   .software-title .legal-mark{margin-left:-0.12em;margin-right:-0.04em;transform:translate(-0.03em,-0.45em);font-size:0.22em}
   .preview-gallery-grid{grid-template-columns:1fr;gap:14px}
   .preview-gallery-main{grid-column:auto}
@@ -992,4 +1035,6 @@ footer{padding:30px 0 8px;display:flex;align-items:center;justify-content:space-
   }
   .profile-orbit:hover .hero-profile-photo{transform:none;filter:none}
   .shader-background,.site-cursor-tube-canvas,.site-cursor-aura{display:none}
+  .software-page-video{display:none}
+  .software-page-backdrop{background:#030711 url("assets/software/hero/language-intelligence-hero-poster.jpg") center/cover no-repeat}
 }

@@ -377,6 +377,7 @@ body.cursor-tube-visible .site-cursor-aura{opacity:0}
 .section-logo{margin:0 auto 18px}
 h1{font-family:Georgia,serif;font-size:clamp(44px,8vw,90px);line-height:0.92;letter-spacing:0;color:#fff}
 .home-hero h1{position:relative;text-shadow:0 22px 54px rgba(0,0,0,0.46),0 1px 0 rgba(255,255,255,0.04)}
+.hero-name-nickname{display:inline-block;font-size:0.42em;vertical-align:middle}
 .home-hero h1::before{
   content:"";position:absolute;inset:-24% -18%;z-index:-1;border-radius:50%;
   background:radial-gradient(ellipse at center,rgba(3,6,12,0.54) 0%,rgba(8,11,18,0.26) 44%,transparent 74%);

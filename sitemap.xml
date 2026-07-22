@@ -38,7 +38,13 @@
   </url>
   <url>
     <loc>https://sifaks.com/blog.html</loc>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sifaks.com/blog-sifaks-language-learning-current-app-update.html</loc>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -80,7 +86,7 @@
   </url>
   <url>
     <loc>https://sifaks.com/software.html</loc>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
